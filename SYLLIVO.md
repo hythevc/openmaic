@@ -4,6 +4,26 @@ Syllivo is the independent product brand for this OpenMAIC-based business.
 The working audience is professionals learning new skills. The original MIT
 license and THU-MAIC attribution are preserved.
 
+## Deploy result
+
+| Field | Result |
+| --- | --- |
+| URL | https://syllivo-one.vercel.app |
+| Target | Production hosting; early-access product preview |
+| Status | READY |
+| Code commit | `f3eabd9978c90f58ff84859b45a39c2db2b93e82` |
+| Framework | Next.js 16.3.3 |
+| Build and deployment | Approximately 30 seconds; remote build succeeded |
+| Review | https://github.com/hythevc/openmaic/pull/1 (draft) |
+
+Live-browser verification passed the complete lesson, saved progress, draft
+reload, all public routes, 404 and mobile-overflow checks without browser errors.
+The deployment returned HTTP 200 and the expected public page title. A runtime
+error/fatal scan for the deployment found no matching logs in its first ten-minute
+window; this is a launch check, not long-term monitoring. No monitoring integration
+was added in this session. The code deployment is the commit above; later
+handoff-only documentation commits do not change its application code.
+
 ## Public early-access preview
 
 The independently deployable app is in [packages/launch](packages/launch).
