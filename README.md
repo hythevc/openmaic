@@ -1,3 +1,14 @@
+# Syllivo — Make knowledge click.
+
+This fork is being developed into **Syllivo**, an independent interactive-learning
+product based on OpenMAIC. The new responsive public preview lives in
+[`packages/launch`](packages/launch); the full classroom engine remains below.
+
+See [Syllivo launch status and setup](SYLLIVO.md) for what works, verification,
+and the requirements before enabling paid accounts and AI generation.
+
+---
+
 <!-- <p align="center">
   <img src="assets/logo-horizontal.png" alt="OpenMAIC" width="420"/>
 </p> -->

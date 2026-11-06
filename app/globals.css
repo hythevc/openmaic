@@ -593,3 +593,8 @@ body[data-maic-editor='true'] .editable-element-text li,
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
   --safe-area-left: env(safe-area-inset-left, 0px);
 }
+
+/* Keep the wordmark legible when the app uses its manually selected dark theme. */
+.dark img[src='/syllivo-wordmark.svg'] {
+  filter: brightness(0) invert(1);
+}
