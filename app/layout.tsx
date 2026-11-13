@@ -18,6 +18,7 @@ import { AccessCodeGuard } from '@/components/access-code-guard';
 import { ProSwapWatcher } from '@/components/workbench/ProSwapWatcher';
 import { loadLocaleResource } from '@/lib/i18n/load-resource';
 import { LOCALE_COOKIE, resolveRequestLocale } from '@/lib/i18n/resolve-locale';
+import { BRAND } from '@/lib/brand';
 
 // The UI font is loaded from @fontsource's stylesheet rather than next/font,
 // because only the stylesheet carries the per-subset `unicode-range`
@@ -48,12 +49,13 @@ const THEME_INIT_SCRIPT = `try{var t=localStorage.getItem('theme');if(t==='dark'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: BRAND.colors.forest,
 };
 
 export const metadata: Metadata = {
-  title: 'OpenMAIC',
-  description:
-    'The open-source AI interactive classroom. Upload a PDF to instantly generate an immersive, multi-agent learning experience.',
+  title: `${BRAND.name} — ${BRAND.slogan}`,
+  description: BRAND.description,
+  icons: { icon: BRAND.markSrc },
 };
 
 export default async function RootLayout({

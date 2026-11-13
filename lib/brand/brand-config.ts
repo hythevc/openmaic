@@ -1,3 +1,5 @@
+import { BRAND } from '@/lib/brand';
+
 /**
  * Brand configuration.
  *
@@ -25,10 +27,10 @@ export interface BrandConfig {
 
 /** The default brand: the product itself, with no vendor overrides. */
 export const DEFAULT_BRAND: BrandConfig = {
-  productName: 'OpenMAIC',
-  shortName: 'OpenMAIC',
-  logoSrc: '/logo-horizontal.png',
+  productName: BRAND.name,
+  shortName: BRAND.name,
+  logoSrc: BRAND.logoSrc,
   logoHasWordmark: true,
-  markSrc: '/openmaic-mark.png',
-  themeColor: '#722ed1',
+  markSrc: BRAND.markSrc,
+  themeColor: BRAND.colors.forest,
 };

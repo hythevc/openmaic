@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo, useRef, useDeferredValue, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import { BRAND } from '@/lib/brand';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   ArrowUp,
@@ -904,8 +905,8 @@ function HomePage() {
         {/* ── Logo ── */}
         <div className="home-brand relative" data-pro-morph="lockup">
           <img
-            src="/logo-horizontal.png"
-            alt="OpenMAIC"
+            src={BRAND.logoSrc}
+            alt={BRAND.name}
             className={cn(
               'h-12 md:h-16 mb-2 -ml-2 md:-ml-3',
               heroEnter('fade-in zoom-in-90 duration-500 delay-100'),
@@ -924,15 +925,23 @@ function HomePage() {
           ) : null}
         </div>
 
-        {mobile && <h1 className="home-mobile-heading">{t('home.mobileTitle')}</h1>}
+        <h1
+          className={
+            mobile
+              ? 'home-mobile-heading'
+              : 'mt-4 mb-3 text-3xl font-semibold tracking-tight text-foreground'
+          }
+        >
+          {mobile ? t('home.mobileTitle') : BRAND.slogan}
+        </h1>
         {/* ── Slogan ── */}
         <p
           className={cn(
-            'home-slogan text-sm text-muted-foreground/60 mb-8',
+            'home-slogan text-sm leading-relaxed text-muted-foreground mb-8 text-center',
             heroEnter('fade-in duration-300 delay-250'),
           )}
         >
-          {t(mobile ? 'home.mobileSubtitle' : 'home.slogan')}
+          {mobile ? t('home.mobileSubtitle') : BRAND.description}
         </p>
 
         {/* ── Unified input area ── */}
@@ -1670,8 +1679,16 @@ function HomePage() {
       )}
 
       {/* Footer — flows with content, at the very end */}
-      <div className="home-footer mt-auto pt-12 pb-4 text-center text-xs text-muted-foreground/40">
-        OpenMAIC Open Source Project
+      <div className="home-footer mt-auto pt-12 pb-4 text-center text-xs text-muted-foreground">
+        {BRAND.name} · Built on{' '}
+        <a
+          href="https://github.com/THU-MAIC/OpenMAIC"
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-2 hover:text-foreground"
+        >
+          OpenMAIC
+        </a>
       </div>
     </div>
   );
