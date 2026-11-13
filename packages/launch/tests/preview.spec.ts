@@ -29,7 +29,7 @@ test('course brief is saved locally and survives reload', async ({ page }) => {
   await page
     .getByLabel('What would you like to understand?')
     .fill('Understand how to give better feedback');
-  await page.getByRole('button', { name: 'Build my course' }).click();
+  await page.getByRole('button', { name: 'Save my idea' }).click();
   await expect(page.getByRole('status')).toContainText('Your brief is saved on this device.');
   await page.reload();
   await expect(page.getByLabel('What would you like to understand?')).toHaveValue(

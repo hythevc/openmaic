@@ -179,7 +179,7 @@ export default function Studio() {
               </div>
             </label>
             <button className="studio-build-button" type="submit">
-              Build my course
+              Save my idea
             </button>
           </div>
         </form>
